@@ -38,7 +38,7 @@ button {
   border: 0.35vw solid black;
   background: linear-gradient(
     rgba(255, 255, 255, 0.75),
-    rgba(255, 255, 255, 0.30)
+    rgba(255, 255, 255, 0.3)
   );
   height: 3vw;
   width: 6vw;
@@ -81,6 +81,39 @@ input {
     rgba(255, 255, 255, 0.15)
   );
   outline: none;
+  visibility: hidden;
+}
+
+.input-s-ani {
+  animation: input-s-ani 0.5s;
+  visibility: visible;
+}
+
+@keyframes input-s-ani {
+  0% {
+    opacity: 0.5;
+    top: -3vw;
+  }
+
+  100% {
+    top: 2vw;
+  }
+}
+
+.input-s-ani-close {
+  animation: input-s-ani-close 0.5s;
+}
+
+@keyframes input-s-ani-close {
+  0% {
+    top: 2vw;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0.5;
+    top: -3vw;
+  }
 }
 
 .one,
@@ -96,6 +129,8 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: -1;
+  visibility: hidden;
 }
 
 .one {
@@ -107,11 +142,21 @@ input {
 }
 
 .one-ani {
-  animation: one-ani 0.7s;
+  animation: one-ani 0.5s;
+  visibility: visible;
+}
+
+.one-ani-close {
+  animation: one-ani-close 0.5s;
 }
 
 .all-ani {
-  animation: all-ani 0.7s;
+  animation: all-ani 0.5s;
+  visibility: visible;
+}
+
+.all-ani-close {
+  animation: all-ani-close 0.5s;
 }
 
 @keyframes one-ani {
@@ -122,6 +167,18 @@ input {
 
   100% {
     bottom: 9vw;
+  }
+}
+
+@keyframes one-ani-close {
+  0% {
+    bottom: 9vw;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0.5;
+    bottom: 3vw;
   }
 }
 
@@ -136,6 +193,14 @@ input {
   }
 }
 
-.hide {
-  display: none;
+@keyframes all-ani-close {
+  0% {
+    bottom: 15vw;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0.5;
+    bottom: 3vw;
+  }
 }
